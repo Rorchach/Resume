@@ -4,3 +4,6 @@ Base on AngularJS、Require、Grunt
 ### Development
 - `npm install`
 - `bower install`
+- `grunt bower`
+### Start Web
+`python -m SimpleHTTPServer`

@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app='login'>
+	<head>
+		<meta charset='utf-8'>
+		<title>简历&middot;登陆</title>
+		
+	</head>
+	<body>
+		<form name="loginForm" ng-controller='LoginFormCtr'>
+			<input type="email" ng-model='email' ng-required='true' ng-maxlength="21">
+			<input ng-model='pwd' type='password' ng-required='true'>
+			<button type="submit">登陆</button>
+			{{loginForm.$error.email}}
+		</form>
+
+		<script src='/public/js/lib/requirejs/require.js' data-main='/public/js/config.js'></script>
+	</body>
+</html>
