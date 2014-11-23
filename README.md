@@ -1,13 +1,6 @@
-Resume
-======
-
+# Resume
 AngularJS App of Personal Resume
-
-======
 Base on AngularJS、Require、Grunt
-======
-###Start
-
-npm install
-======
-bower install
+### Usage
+- `npm install`
+- `bower install`
