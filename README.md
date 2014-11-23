@@ -1,6 +1,6 @@
 # Resume
 AngularJS App of Personal Resume
 Base on AngularJS、Require、Grunt
-### Usage
+### Development
 - `npm install`
 - `bower install`
