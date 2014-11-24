@@ -3,7 +3,9 @@ requirejs.config({
 
 	paths: {
 		login: 'login',
-		angular: 'lib/angularjs/angular'
+		angular: 'lib/angularjs/angular',
+		text: 'lib/requirejs-text/text',
+		json: 'lib/requirejs-plugins/json'
 	},
 
 	shim: {

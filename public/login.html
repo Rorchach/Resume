@@ -3,14 +3,13 @@
 	<head>
 		<meta charset='utf-8'>
 		<title>简历&middot;登陆</title>
-		
 	</head>
 	<body>
-		<form name="loginForm" ng-controller='LoginFormCtr'>
-			<input type="email" ng-model='email' ng-required='true' ng-maxlength="21">
+		<form name="loginForm" ng-submit='loginSubmit()' ng-controller='LoginFormCtr'>
+			<input ng-model='email' type="email" ng-required='true'>
 			<input ng-model='pwd' type='password' ng-required='true'>
-			<button type="submit">登陆</button>
-			{{loginForm.$error.email}}
+			<button type="submit" id="submit" value="Submit">登陆</button>
+			{{loginForm}}
 		</form>
 
 		<script src='/public/js/lib/requirejs/require.js' data-main='/public/js/config.js'></script>
