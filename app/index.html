@@ -23,17 +23,20 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
+          <li class="active"><a ng-href="#">主页</a></li>
+          <li><a ng-href="#/about">关于</a></li>
+          <li><a ng-href="#/login">登陆</a></li>
         </ul>
-        <h3 class="text-muted">resume</h3>
+        <h3 class="text-muted">简历</h3>
       </div>
 
       <div ng-view=""></div>
 
       <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        <p>
+          <span class="glyphicon glyphicon-heart">
+          </span> by <a href="mailto:cookmycode@gmail.com">huker</a>
+        </p>
       </div>
     </div>
 
@@ -85,6 +88,7 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/login.js"></script>
         <!-- endbuild -->
 </body>
 </html>
