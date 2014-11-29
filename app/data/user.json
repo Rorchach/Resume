@@ -1,0 +1,28 @@
+{
+	"name": "胡阳",
+	"email": "cookmycode@gmail.com",
+	"pwd": "123456",
+	"age": 23,
+	"website": "182.92.8.100",
+	"gender": "0",
+	"work_experience": "应届生",
+	"birthday": "1990-12-06",
+	"phone": "13716413529",
+	"now_live": "北京",
+	"university": "黑龙江八一农垦大学",
+	"education_background": "本科",
+	"education_experience": [{
+		"school_name": "黑龙江八一农垦大学",
+		"major": "计算机科学与技术",
+		"start": "2010-8",
+		"end": "2014-6",
+		"school_type": "本科"
+		}],
+	"skill": {
+		"0": ["bootstrap", "jquery"],
+		"1": ["Linux", "JavaScritp", "RequireJS", "Grunt", "NodeJS"]
+	},
+	"self_evaluation": "对技术很有热情，擅长JS、Jquery、BootStrap、NodeJs。擅长看懂英语文档，有自己的Github：https://github.com/Rorchach，个人网站：182.92.8.100, 从事前端半年时间，熟练使用Jquery、BootStrap，熟悉require.js模块化编程、Grunt前端自动化工具，熟练使用Ajax、Jsonp和WebSocket等技术和后台交互，略懂NodeJs和Express框架，有移动端编程经验，能够熟练在Ubuntu和Mac下编程。",
+	"certificate": ["大学英语四级"],
+	"glory": ["2012、2013黑龙江省ACM竞赛三等奖", "2012、2013东北四省ACM竞赛三等奖", "农电八五奖学金", "国家励志奖学金"]
+}

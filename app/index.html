@@ -21,22 +21,101 @@
 
     <!-- Add your site or application content here -->
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">主页</a></li>
-          <li><a ng-href="#/about">关于</a></li>
-          <li><a ng-href="#/login">登陆</a></li>
-        </ul>
-        <h3 class="text-muted">简历</h3>
+      <div ng-view="">
+        <div ng-controller="ResumeCtrl">
+          <div ng-module="user">
+            <h2>
+                {{user.name}}
+                <small>
+                  ({{user.gender}}，{{user.age}})
+                </small>
+            </h2>
+            <p>
+                {{user.university}}&middot;
+                {{user.education_background}}&middot;
+                {{user.work_experience}}&middot;
+                现居{{user.now_live}}
+            </p>
+            <p>手机： {{user.phone}}</p>
+            <p>邮箱： {{user.email}} </p>
+            <p>个人网站：<a href="http://{{user.website}}">{{user.website}}</a></p>
+          </div>
+
+          <div class="well well-sm my-info-tag">
+            <h4>职业</h4>
+            <div class="media">
+              <div class="media-left"></div>
+              <div class="media-body">
+                前端工程师
+              </div>
+            </div>
+          </div>
+            
+          <div class="well well-sm my-info-tag">
+            <h4>技能</h4>
+            <div class="media">
+              <div class="media-left"></div>
+              <div class="media-body">
+                <p>精通的技能</p>
+                <p class="text-muted">
+                  {{user.skill["0"]}}
+                </p>
+                <p>熟悉的技能</p>
+                <p class="text-muted">
+                  {{user.skill["1"]}}
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="well well-sm my-info-tag">
+            <h4>教育经历</h4>
+            <div class="media">
+              <div ng-repeat="exp in user.education_experience">
+                <div class="media-left text-muted">
+                  {{exp.start}}至{{exp.end}}
+                </div>
+                <div class="media-body">
+                  {{exp.major}}&nbsp;
+                  {{exp.school_name}}&nbsp;
+                  {{exp.school_type}}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="well well-sm my-info-tag">
+            <h4>证书、荣誉</h4>
+            <div class="media">
+              <div class="media-left"></div>
+              <div class="media-body text-muted">
+                <div ng-repeat="cert in user.certificate">
+                  <p>{{cert}}</p>
+                </div>
+                <div ng-repeat="gl in user.glory">
+                  <p>{{gl}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="well well-sm my-info-tag">
+            <h4>自我评价</h4>
+            <div class="media">
+              <div class="media-left"></div>
+              <div class="media-right">
+                {{user.self_evaluation}}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div ng-view=""></div>
-
       <div class="footer">
-        <p>
+        <center>
           <span class="glyphicon glyphicon-heart">
-          </span> by <a href="mailto:cookmycode@gmail.com">huker</a>
-        </p>
+          </span> by <a href="http://182.92.8.100" target="_">huker</a>
+        </center>
       </div>
     </div>
 
@@ -61,8 +140,8 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-<script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/angular/angular.js"></script>
+<!-- <script src="bower_components/jquery/dist/jquery.js"></script> -->
+<!-- <script src="bower_components/angular/angular.js"></script> -->
 
 <!-- <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
 <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
@@ -76,12 +155,12 @@
 <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
 <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
 <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script> -->
-<script src="bower_components/angular-animate/angular-animate.js"></script>
+<!-- <script src="bower_components/angular-animate/angular-animate.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.js"></script>
 <script src="bower_components/angular-resource/angular-resource.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script> -->
     <!-- endbower -->
     <!-- endbuild -->
 
