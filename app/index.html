@@ -23,26 +23,40 @@
     <div class="container">
       <div ng-view="">
         <div ng-controller="ResumeCtrl">
-          <div ng-module="user">
-            <h2>
-                {{user.name}}
-                <small>
-                  ({{user.gender}}，{{user.age}})
-                </small>
-            </h2>
-            <p>
-                {{user.university}}&middot;
-                {{user.education_background}}&middot;
-                {{user.work_experience}}&middot;
-                现居{{user.now_live}}
-            </p>
-            <p>手机： {{user.phone}}</p>
-            <p>邮箱： {{user.email}} </p>
-            <p>个人网站：<a href="http://{{user.website}}">{{user.website}}</a></p>
+          <div ng-repeat="(view, isShow) in user.showInResume">
+            <span class="checkbox">
+              <input type="checkbox" ng-model="user.showInResume[view]">
+              <label>{{view}}</label>
+            </span>
+          </div>
+          
+          <div class="row">
+            <div class="col-xs-6">
+              <div ng-module="user">
+                <h2>
+                    {{user.name}}
+                    <small>
+                      ({{user.gender}}，{{user.age}})
+                    </small>
+                </h2>
+                <p>
+                    {{user.university}}&middot;
+                    {{user.education_background}}&middot;
+                    {{user.work_experience}}&middot;
+                    现居{{user.now_live}}
+                </p>
+                <p>手机： {{user.phone}}</p>
+                <p>邮箱： {{user.email}} </p>
+                <p>个人网站：<a href="http://{{user.website}}">{{user.website}}</a></p>
+              </div>
+            </div>
+            <div class="col-xs-6 text-right">
+              <img class="photo img-thumbnail" src="images/photo.jpg" ng-show="user.showInResume.photo">
+            </div>
           </div>
 
-          <div class="well well-sm my-info-tag">
-            <h4>职业</h4>
+          <div class="well well-sm my-info-tag" ng-show="job_intent">
+            <h4>求职意向</h4>
             <div class="media">
               <div class="media-left"></div>
               <div class="media-body">
@@ -51,7 +65,7 @@
             </div>
           </div>
             
-          <div class="well well-sm my-info-tag">
+          <div class="well well-sm my-info-tag" ng-show="user.showInResume.skill">
             <h4>技能</h4>
             <div class="media">
               <div class="media-left"></div>
@@ -68,7 +82,7 @@
             </div>
           </div>
           
-          <div class="well well-sm my-info-tag">
+          <div class="well well-sm my-info-tag" ng-show="user.showInResume.education_experience">
             <h4>教育经历</h4>
             <div class="media">
               <div ng-repeat="exp in user.education_experience">
@@ -84,7 +98,7 @@
             </div>
           </div>
 
-          <div class="well well-sm my-info-tag">
+          <div class="well well-sm my-info-tag" ng-show="user.showInResume.certificate_and_glory">
             <h4>证书、荣誉</h4>
             <div class="media">
               <div class="media-left"></div>
@@ -99,7 +113,7 @@
             </div>
           </div>
 
-          <div class="well well-sm my-info-tag">
+          <div class="well well-sm my-info-tag" ng-show="user.showInResume.self_evaluation">
             <h4>自我评价</h4>
             <div class="media">
               <div class="media-left"></div>
@@ -122,13 +136,13 @@
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       // })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
+       // ga('create', 'UA-XXXXX-X');
+       // ga('send', 'pageview');
     </script>
 
     <!-- build:js(.) scripts/oldieshim.js -->

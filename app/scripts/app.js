@@ -1,4 +1,4 @@
-define(['angular', 'json!../data/user.json'], function(angular, user){
+define(['angular', 'json!../data/user.json', ['ui.bootstrap']], function(angular, user){
     'use strict';
 
     var resumeApp =  angular.module('resumeApp', [])
