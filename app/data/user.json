@@ -26,10 +26,25 @@
 	"certificate": ["大学英语四级"],
 	"glory": ["2012、2013黑龙江省ACM竞赛三等奖", "2012、2013东北四省ACM竞赛三等奖", "农电八五奖学金", "国家励志奖学金"],
 	"showInResume": {
-		"education_experience": true,
-		"skill": true,
-		"self_evaluation":true,
-		"certificate_and_glory":true,
-		"photo": true
+		"education_experience": {
+			"text": "教育经历",
+			"show": true
+		},
+		"skill": {
+			"text": "技能",
+			"show": true
+		},
+		"self_evaluation": {
+			"text": "自我评价",
+			"show": true
+		},
+		"certificate_and_glory": {
+			"text": "证书与荣誉",
+			"show": true
+		},
+		"photo": {
+			"text": "照片",
+			"show":true
+		}
 	}
 }

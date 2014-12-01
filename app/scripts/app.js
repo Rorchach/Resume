@@ -1,7 +1,8 @@
-define(['angular', 'json!../data/user.json', ['ui.bootstrap']], function(angular, user){
+define(['angular', 'json!../data/user.json', 'ngAnimate'],
+    function(angular, user){
     'use strict';
 
-    var resumeApp =  angular.module('resumeApp', [])
+    var resumeApp =  angular.module('resumeApp', ['ngAnimate'])
                     .controller('ResumeCtrl', ['$scope', ResumeCtrl]);
 
     function ResumeCtrl($scope) {

@@ -13,6 +13,21 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+
+    <style>
+
+
+.animate-show.ng-hide-add.ng-hide-add-active,
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.animate-show.ng-hide {
+  line-height:0;
+  opacity:0;
+}
+    </style>
   </head>
   <body ng-app="resumeApp">
     <!--[if lt IE 7]>
@@ -23,10 +38,10 @@
     <div class="container">
       <div ng-view="">
         <div ng-controller="ResumeCtrl">
-          <div ng-repeat="(view, isShow) in user.showInResume">
+          <div ng-repeat="(key, view) in user.showInResume">
             <span class="checkbox">
-              <input type="checkbox" ng-model="user.showInResume[view]">
-              <label>{{view}}</label>
+              <input type="checkbox" ng-model="user.showInResume[key].show">
+              <label>{{view.text}}</label>
             </span>
           </div>
           
@@ -51,7 +66,7 @@
               </div>
             </div>
             <div class="col-xs-6 text-right">
-              <img class="photo img-thumbnail" src="images/photo.jpg" ng-show="user.showInResume.photo">
+              <img class="photo img-thumbnail" src="images/photo.jpg" ng-show="user.showInResume.photo.show">
             </div>
           </div>
 
@@ -65,7 +80,7 @@
             </div>
           </div>
             
-          <div class="well well-sm my-info-tag" ng-show="user.showInResume.skill">
+          <div class="well well-sm my-info-tag animate-show" ng-show="user.showInResume.skill.show">
             <h4>技能</h4>
             <div class="media">
               <div class="media-left"></div>
@@ -82,12 +97,13 @@
             </div>
           </div>
           
-          <div class="well well-sm my-info-tag" ng-show="user.showInResume.education_experience">
+          <div class="well well-sm my-info-tag" ng-show="user.showInResume.education_experience.show">
             <h4>教育经历</h4>
             <div class="media">
               <div ng-repeat="exp in user.education_experience">
                 <div class="media-left text-muted">
-                  {{exp.start}}至{{exp.end}}
+                  <div>{{exp.start}}至</div>
+                  {{exp.end}}
                 </div>
                 <div class="media-body">
                   {{exp.major}}&nbsp;
@@ -98,7 +114,7 @@
             </div>
           </div>
 
-          <div class="well well-sm my-info-tag" ng-show="user.showInResume.certificate_and_glory">
+          <div class="well well-sm my-info-tag" ng-show="user.showInResume.certificate_and_glory.show">
             <h4>证书、荣誉</h4>
             <div class="media">
               <div class="media-left"></div>
@@ -113,11 +129,11 @@
             </div>
           </div>
 
-          <div class="well well-sm my-info-tag" ng-show="user.showInResume.self_evaluation">
+          <div class="well well-sm my-info-tag" ng-show="user.showInResume.self_evaluation.show">
             <h4>自我评价</h4>
             <div class="media">
               <div class="media-left"></div>
-              <div class="media-right">
+              <div class="media-body text-muted">
                 {{user.self_evaluation}}
               </div>
             </div>
@@ -177,7 +193,6 @@
 <script src="bower_components/angular-touch/angular-touch.js"></script> -->
     <!-- endbower -->
     <!-- endbuild -->
-
         <script src="bower_components/requirejs/require.js" data-main="scripts/config.js"></script>
 <!-- <script src="scripts/controllers/main.js"></script>
 <script src="scripts/controllers/about.js"></script>

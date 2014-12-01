@@ -5,13 +5,16 @@ requirejs.config({
 
 	paths: {
 		angular: bower_c + 'angular/angular',
+		ngAnimate: bower_c + 'angular-animate/angular-animate',
 		text: bower_c + 'requirejs-text/text',
 		json: bower_c + 'requirejs-plugins/src/json',
 		app: 'app'
 	},
 
 	shim: {
-		angular: {exports: 'angular'}
+		ng: {exports: 'ng'},
+		angular: {exports: 'angular'},
+		ngAnimate: {deps: ['angular']}
 	}
 });
 
