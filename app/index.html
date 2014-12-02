@@ -17,13 +17,12 @@
     <style>
 
 
-.animate-show.ng-hide-add.ng-hide-add-active,
-.animate-show.ng-hide-remove.ng-hide-remove-active {
+.ng-animate.ng-hide-add{
   -webkit-transition:all linear 0.5s;
   transition:all linear 0.5s;
 }
 
-.animate-show.ng-hide {
+.ng-animate.ng-hide {
   line-height:0;
   opacity:0;
 }
@@ -80,7 +79,7 @@
             </div>
           </div>
             
-          <div class="well well-sm my-info-tag animate-show" ng-show="user.showInResume.skill.show">
+          <div class="well well-sm my-info-tag" ng-show="user.showInResume.skill.show">
             <h4>技能</h4>
             <div class="media">
               <div class="media-left"></div>
