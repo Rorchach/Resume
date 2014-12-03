@@ -9,7 +9,8 @@ requirejs.config({
 		ngAnimate: bower_c + 'angular-animate/angular-animate',
 		text: bower_c + 'requirejs-text/text',
 		json: bower_c + 'requirejs-plugins/src/json',
-		app: 'app'
+		app: 'app',
+		login: 'login'
 	},
 
 	shim: {
@@ -19,4 +20,4 @@ requirejs.config({
 	}
 });
 
-define(['app']);
+define(['app','login']);
