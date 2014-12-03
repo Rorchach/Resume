@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="LoginApp">
+<head>
+	<meta charset="UTF-8">
+	<title>登陆</title>
+</head>
+<body>
+	<form name="loginForm" ng-controller="LoginFormCtrl" ng-submit="LoginSubmit(loginForm)">
+		<input ng-model="user.email" type="email" name="email" required>
+		<input ng-model="user.pwd" type="password" name="pwd" required ng-minlength="6">
+		<button type="submit" ng-disabled="loginForm.$invalid">登陆</button>
+		<br>
+		<tt ng-show="loginForm.email.$error.required">邮箱不能为空</tt>
+		<tt ng-show="loginForm.email.$error.email">邮箱格式不正确</tt>
+		<tt ng-show="loginForm.email.$valid">邮箱验证通过</tt>
+		<tt ng-show="loginForm.pwd.$error.minlength">密码格式不能少于6位</tt>
+		<tt ng-show="loginForm.pwd.$valid">密码格式通过</tt>
+	</form>
+
+	<script src="bower_components/requirejs/require.js" data-main="scripts/config.js"></script>
+</body>
+</html>
