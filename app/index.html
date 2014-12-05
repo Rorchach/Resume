@@ -11,10 +11,12 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
   <body ng-app="resumeApp">
+
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -23,12 +25,20 @@
     <div class="container">
       <div ng-view="">
         <div ng-controller="ResumeCtrl">
-          <div ng-repeat="(key, view) in user.showInResume">
-            <span class="checkbox">
+
+    <section layout="row" layout-sm="column" layout-align="center center">
+      <md-button class="md-raised">Button</md-button>
+      <md-button class="md-raised md-primary">Primary</md-button>
+      <md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
+      <md-button class="md-raised md-warn">Warn</md-button>
+      <div class="label">raised</div>
+    </section>
+    
+
+          <label class="checkbox-inline" ng-repeat="(key, view) in user.showInResume">
               <input type="checkbox" ng-model="user.showInResume[key].show">
-              <label>{{view.text}}</label>
-            </span>
-          </div>
+              {{view.text}}
+          </label>
           
           <div class="row">
             <div class="col-xs-6">
@@ -178,6 +188,7 @@
 <script src="bower_components/angular-touch/angular-touch.js"></script> -->
     <!-- endbower -->
     <!-- endbuild -->
+        <script src="bower_components/hammerjs/hammer.js"></script>
         <script src="bower_components/requirejs/require.js" data-main="scripts/config.js"></script>
 <!-- <script src="scripts/controllers/main.js"></script>
 <script src="scripts/controllers/about.js"></script>

@@ -1,8 +1,8 @@
-define(['angular', 'json!../data/user.json', 'ngAnimate', 'cookie'],
-    function(angular, user){
+define(['angular', 'ngMaterial', 'json!../data/user.json', 'ngAnimate', 'cookie', 'ngAria'],
+    function(angular, ngMaterial, user){
     'use strict';
 
-    var resumeApp =  angular.module('resumeApp', ['ngAnimate', 'ngCookies'])
+    var resumeApp =  angular.module('resumeApp', ['ngAnimate', 'ngCookies', 'ngMaterial'])
                     .controller('ResumeCtrl', ['$scope', '$cookies', ResumeCtrl]);
 
     function ResumeCtrl($scope, $cookies) {
