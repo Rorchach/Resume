@@ -14,6 +14,34 @@
     <link rel="stylesheet" href="/bower_components/fontawesome/css/font-awesome.css">
     <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
     <link rel="stylesheet" href="styles/main.css">
+    <style>
+  .textFielddemoBasicUsage form > .row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+
+    -moz-align-items: center;
+    align-items: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-left: -8px; }
+  .textFielddemoBasicUsage .row > * {
+    font-size: inherit;
+    margin-left: 8px;
+    margin-right: 8px; }
+  .textFielddemoBasicUsage md-input-group.long > input {
+    width: 264px; }
+    </style>
     <!-- endbuild -->
   </head>
   <body ng-app="resumeApp">
@@ -24,7 +52,6 @@
 
     <!-- Add your site or application content here -->
     <div class="container">
-      <div ng-view="">
         <div ng-controller="ResumeCtrl" layout-fill>  
 
     <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
@@ -40,7 +67,6 @@
         <md-checkbox ng-repeat="(key, view) in user.showInResume" aria-label="111" ng-model="user.showInResume[key].show">
           {{view.text}}
         </md-checkbox>   
-
       </md-content>
     </md-sidenav>
 
@@ -48,108 +74,22 @@
             <span class="fa fa-navicon"></span>
         </md-button>
 
+        <a href="#/view">
+        <md-button class="md-fab md-warn" style="position:fixed; left:10px; top:80px;">
+                <span class="fa fa-eye"></span>
+        </md-button>
+        </a>
 
+        <a href="#/editor">
+        <md-button class="md-fab md-warn" style="position:fixed; left:10px; top:140px;">
+                <span class="fa fa-pencil"></span>
+        </md-button>
+        </a>
 
-
-        <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
-            Toggle left
-          </md-button> 
+           
+        <div ng-view>
           
-          <div class="row">
-            <div class="col-xs-6">
-              <div ng-module="user">
-                <h2>
-                    {{user.name}}
-                    <small>
-                      ({{user.gender}}，{{user.age}})
-                    </small>
-                </h2>
-                <p>
-                    {{user.university}}&middot;
-                    {{user.education_background}}&middot;
-                    {{user.work_experience}}&middot;
-                    现居{{user.now_live}}
-                </p>
-                <p>手机： {{user.phone}}</p>
-                <p>邮箱： {{user.email}} </p>
-                <p>个人网站：<a href="http://{{user.website}}">{{user.website}}</a></p>
-              </div>
-            </div>
-            <div class="col-xs-6 text-right">
-              <img class="photo img-thumbnail" src="images/photo.jpg" ng-show="user.showInResume.photo.show">
-            </div>
-          </div>
-
-          <div class="well well-sm my-info-tag" ng-show="job_intent">
-            <h4>求职意向</h4>
-            <div class="media">
-              <div class="media-left"></div>
-              <div class="media-body">
-                前端工程师
-              </div>
-            </div>
-          </div>
-            
-          <div class="well well-sm my-info-tag" ng-show="user.showInResume.skill.show">
-            <h4>技能</h4>
-            <div class="media">
-              <div class="media-left"></div>
-              <div class="media-body">
-                <p>精通的技能</p>
-                <p class="text-muted">
-                  {{user.skill["0"]}}
-                </p>
-                <p>熟悉的技能</p>
-                <p class="text-muted">
-                  {{user.skill["1"]}}
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="well well-sm my-info-tag" ng-show="user.showInResume.education_experience.show">
-            <h4>教育经历</h4>
-            <div class="media">
-              <div ng-repeat="exp in user.education_experience">
-                <div class="media-left text-muted">
-                  <div>{{exp.start}}至</div>
-                  {{exp.end}}
-                </div>
-                <div class="media-body">
-                  {{exp.major}}&nbsp;
-                  {{exp.school_name}}&nbsp;
-                  {{exp.school_type}}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="well well-sm my-info-tag" ng-show="user.showInResume.certificate_and_glory.show">
-            <h4>证书、荣誉</h4>
-            <div class="media">
-              <div class="media-left"></div>
-              <div class="media-body text-muted">
-                <div ng-repeat="cert in user.certificate">
-                  <p>{{cert}}</p>
-                </div>
-                <div ng-repeat="gl in user.glory">
-                  <p>{{gl}}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="well well-sm my-info-tag" ng-show="user.showInResume.self_evaluation.show">
-            <h4>自我评价</h4>
-            <div class="media">
-              <div class="media-left"></div>
-              <div class="media-body text-muted">
-                {{user.self_evaluation}}
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
 
       <div class="footer">
         <center>
@@ -157,7 +97,6 @@
           </span> by <a href="http://182.92.8.100" target="_">huker</a>
         </center>
       </div>
-    </div>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

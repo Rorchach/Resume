@@ -1,0 +1,95 @@
+<div class="row">
+            <div class="col-xs-6">
+              <div ng-module="user">
+                <h2>
+                    {{user.name}}
+                    <small>
+                      ({{user.gender}}，{{user.age}})
+                    </small>
+                </h2>
+                <p>
+                    {{user.university}}&middot;
+                    {{user.education_background}}&middot;
+                    {{user.work_experience}}&middot;
+                    现居{{user.now_live}}
+                </p>
+                <p>手机： {{user.phone}}</p>
+                <p>邮箱： {{user.email}} </p>
+                <p>个人网站：<a href="http://{{user.website}}">{{user.website}}</a></p>
+              </div>
+            </div>
+            <div class="col-xs-6 text-right">
+              <img class="photo img-thumbnail" src="images/photo.jpg" ng-show="user.showInResume.photo.show">
+            </div>
+          </div>
+
+          <div class="well well-sm my-info-tag" ng-show="job_intent">
+            <h4>求职意向</h4>
+            <div class="media">
+              <div class="media-left"></div>
+              <div class="media-body">
+                前端工程师
+              </div>
+            </div>
+          </div>
+            
+          <div class="well well-sm my-info-tag" ng-show="user.showInResume.skill.show">
+            <h4>技能</h4>
+            <div class="media">
+              <div class="media-left"></div>
+              <div class="media-body">
+                <p>精通的技能</p>
+                <p class="text-muted">
+                  {{user.skill["0"]}}
+                </p>
+                <p>熟悉的技能</p>
+                <p class="text-muted">
+                  {{user.skill["1"]}}
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="well well-sm my-info-tag" ng-show="user.showInResume.education_experience.show">
+            <h4>教育经历</h4>
+            <div class="media">
+              <div ng-repeat="exp in user.education_experience">
+                <div class="media-left text-muted">
+                  <div>{{exp.start}}至</div>
+                  {{exp.end}}
+                </div>
+                <div class="media-body">
+                  {{exp.major}}&nbsp;
+                  {{exp.school_name}}&nbsp;
+                  {{exp.school_type}}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="well well-sm my-info-tag" ng-show="user.showInResume.certificate_and_glory.show">
+            <h4>证书、荣誉</h4>
+            <div class="media">
+              <div class="media-left"></div>
+              <div class="media-body text-muted">
+                <div ng-repeat="cert in user.certificate">
+                  <p>{{cert}}</p>
+                </div>
+                <div ng-repeat="gl in user.glory">
+                  <p>{{gl}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="well well-sm my-info-tag" ng-show="user.showInResume.self_evaluation.show">
+            <h4>自我评价</h4>
+            <div class="media">
+              <div class="media-left"></div>
+              <div class="media-body text-muted">
+                {{user.self_evaluation}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

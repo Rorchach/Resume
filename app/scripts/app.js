@@ -1,42 +1,52 @@
-define(['angular', 'ngMaterial', 'json!../data/user.json', 'ngAnimate', 'cookie', 'ngAria'],
+define(['angular', 'ngMaterial', 'json!../data/user.json', 'ngAnimate', 'cookie', 'ngAria', 'ngRoute'],
     function(angular, ngMaterial, user){
     'use strict';
 
-    var resumeApp =  angular.module('resumeApp', ['ngAnimate', 'ngCookies', 'ngMaterial'])
-                    .controller('ResumeCtrl', ['$scope', '$cookies', '$timeout', '$mdSidenav', ResumeCtrl])
-                    .controller('LeftCtrl', function($scope, $timeout, $mdSidenav) {
-                      $scope.close = function() {
-                        $mdSidenav('left').close();
-                      };
-                    })
-                    .controller('RightCtrl', function($scope, $timeout, $mdSidenav) {
-                      $scope.close = function() {
-                        $mdSidenav('right').close();
-                      };
-                    });
+    angular.module('resumeApp', [
+        'ngAnimate',
+        'ngCookies',
+        'ngMaterial',
+        'ngRoute'])
+        .controller('ResumeCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
+            $scope.user = user;
 
-    function ResumeCtrl($scope, $cookies, $timeout, $mdSidenav) {
-        console.log($mdSidenav);
-        user.gender = user.gender === '0' ? '男' : '女';
+            $scope.toggleLeft = function() {
+                $mdSidenav('left').toggle();
+            };
+            $scope.toggleRight = function() {
+                $mdSidenav('right').toggle();
+            };
+        }])
+        .controller('LeftCtrl', function($scope, $timeout, $mdSidenav) {
+            $scope.close = function() {
+               $mdSidenav('left').close();
+            };
+        })
+        .controller('EditorCtrl', function(){
 
-        $cookies.user = user;
+        })
+        .controller('ViewCtrl', function($scope){
+            console.log(user);
+            user.gender = user.gender === '0' ? '男' : '女';
 
-        console.log($cookies.user);
+            if (typeof user.skill === 'Array') {
+                for (var key in user.skill) {
+                   user.skill[key] = user.skill[key].join('、');
+                }    
+            }
+            
+            $scope.user = user;
+        })
+        .config(function($routeProvider, $locationProvider){
+            $routeProvider
+                .when('/editor', {
+                    templateUrl: 'views/editor.html',
+                    controller: 'EditorCtrl'
+                })
+                .when('/view', {
+                    templateUrl: 'views/view.html',
+                    controller: 'ViewCtrl'
+                });
+        });
 
-        for (var key in user.skill) {
-           user.skill[key] = user.skill[key].join('、');
-        }
-
-        $scope.user = user;
-
-        $scope.toggleLeft = function() {
-            console.log(11);
-            $mdSidenav('left').toggle();
-        };
-        $scope.toggleRight = function() {
-            $mdSidenav('right').toggle();
-        };
-    }
-
-    return resumeApp;
 });
