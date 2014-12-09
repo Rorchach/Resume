@@ -1,26 +1,28 @@
-<md-card layout="column">
- <md-content md-theme="light-blue-dark">
-    <form style="padding: 20px;">
-      <div class="row">
-        <md-text-float label="Title" ng-model="user.title"></md-text-float>
-        <md-text-float label="eMail" ng-model="user.email" type="email"></md-text-float>
-      </div>
-    </form>
-  </md-content>
-  <md-content>
-    <form style="padding: 20px;">
-      <md-text-float label="Company" ng-model="user.company" disabled> </md-text-float>
-      <div class="row">
-          <md-text-float label="FirstName" ng-model="user.firstName"> </md-text-float>
-          <md-text-float label="LastName" ng-model="user.lastName" class="long"> </md-text-float>
-      </div>
-      <md-text-float label="Address" ng-model="user.address"> </md-text-float>
-      <div class="row">
-        <md-text-float label="City" ng-model="user.city"> </md-text-float>
-        <md-text-float label="State" ng-model="user.state"> </md-text-float>
-        <md-text-float label="Postal Code" ng-model="user.postalCode"> </md-text-float>
-      </div>
-      <md-text-float label="Country" ng-model="user.country" disabled> </md-text-float>
-    </form>
-  </md-content>
-</md-card>
+	<md-content md-theme="blue" class="md-whiteframe-z1">
+	    <md-toolbar>
+	      <h2 class="md-toolbar-tools">
+	        <span>基本信息</span>
+	      </h2>
+	    </md-toolbar>
+
+		<form style="padding: 20px;">
+		  <div class="row">
+		    <md-text-float label="姓名" ng-model="user.name"></md-text-float>
+		    <md-text-float label="邮箱" ng-model="user.email" type="email"></md-text-float>
+		  </div>
+		</form>
+
+		<form style="padding: 20px;">
+		  <md-text-float label="性别" ng-model="user.gender" disabled> </md-text-float>
+		  <div class="row">
+		      <md-text-float label="年龄" ng-model="user.age"> </md-text-float>
+		      <md-text-float label="手机" ng-model="user.phone" class="long"> </md-text-float>
+		  </div>
+		  <md-text-float label="邮箱" ng-model="user.email"> </md-text-float>
+		  <div class="row">
+		    <md-text-float label="学校" ng-model="user.university"> </md-text-float>
+		    <md-text-float label="学历" ng-model="user.education_background"> </md-text-float>
+		    <md-text-float label="工作经验" ng-model="user.work_experience"> </md-text-float>
+		  </div>
+		</form>
+	</md-content>
