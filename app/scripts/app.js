@@ -22,7 +22,15 @@ define(['angular', 'ngMaterial', 'json!../data/user.json', 'ngAnimate', 'cookie'
                $mdSidenav('left').close();
             };
         })
-        .controller('EditorCtrl', function(){
+        .controller('EditorCtrl', function($scope, $mdDialog){
+                $scope.showAlert = function(ev) {
+                    $mdDialog.show(
+                        $mdDialog.alert()
+                            .title('title')
+                            .content('content')
+                            .ok('Got it!')
+                    );
+                }
 
         })
         .controller('ViewCtrl', function($scope){

@@ -1,28 +1,34 @@
-	<md-content md-theme="blue" class="md-whiteframe-z1">
-	    <md-toolbar>
+
+<section class="md-whiteframe-z1 editor">
+	<md-toolbar>
 	      <h2 class="md-toolbar-tools">
 	        <span>基本信息</span>
 	      </h2>
-	    </md-toolbar>
-
-		<form style="padding: 20px;">
-		  <div class="row">
-		    <md-text-float label="姓名" ng-model="user.name"></md-text-float>
-		    <md-text-float label="邮箱" ng-model="user.email" type="email"></md-text-float>
+	</md-toolbar>
+	<md-content md-theme="blue" class="md-padding" layout="column">
+			<md-button class="md-raised md-primary" ng-click="showAlert($event)">
+	上传照片
+	<md-tooltip>上传照片</md-tooltip>
+</md-button>
+		  <section layout="row" layout-align="start center">
+		    <md-text-float label="姓名" ng-model="user.name" flex="40"></md-text-float>
+		    <md-text-float label="邮箱" ng-model="user.email" type="email" flex="40"></md-text-float>
+		  </section>
+		
+		<section layout="row">
+		    <md-text-float label="年龄" ng-model="user.age" flex="40"> </md-text-float>
+			<md-text-float label="性别" ng-model="user.gender" flex="40"> </md-text-float>
+		</section>
+		  
+		  <div layout="row">
+		      <md-text-float label="手机" ng-model="user.phone" class="long" flex="40"> </md-text-float>
+		      <md-text-float label="邮箱" ng-model="user.email" flex="40"> </md-text-float>
 		  </div>
-		</form>
-
-		<form style="padding: 20px;">
-		  <md-text-float label="性别" ng-model="user.gender" disabled> </md-text-float>
-		  <div class="row">
-		      <md-text-float label="年龄" ng-model="user.age"> </md-text-float>
-		      <md-text-float label="手机" ng-model="user.phone" class="long"> </md-text-float>
-		  </div>
-		  <md-text-float label="邮箱" ng-model="user.email"> </md-text-float>
-		  <div class="row">
-		    <md-text-float label="学校" ng-model="user.university"> </md-text-float>
-		    <md-text-float label="学历" ng-model="user.education_background"> </md-text-float>
-		    <md-text-float label="工作经验" ng-model="user.work_experience"> </md-text-float>
-		  </div>
-		</form>
+		 
+		<section layout="row">
+		    <md-text-float label="学校" ng-model="user.university" flex="33"> </md-text-float>
+		    <md-text-float label="学历" ng-model="user.education_background" flex="33"> </md-text-float>
+		    <md-text-float label="工作经验" ng-model="user.work_experience"flex="33"> </md-text-float>
+		</section>
 	</md-content>
+</section>
