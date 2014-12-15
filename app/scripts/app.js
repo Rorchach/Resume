@@ -1,6 +1,9 @@
-define(['angular', 'ngMaterial', 'json!../data/user.json', 'ngAnimate', 'cookie', 'ngAria', 'ngRoute'],
-    function(angular, ngMaterial, user){
+define(['angular', 'ngMaterial', 'json!../data/user.json', 'echarts', 'ngAnimate', 'cookie', 'ngAria', 'ngRoute'],
+    function(angular, ngMaterial, user, ec){
     'use strict';
+
+    user = user["likx"];
+    user.gender = user.gender === '0' ? '男' : '女';
 
     angular.module('resumeApp', [
         'ngAnimate',
@@ -34,14 +37,13 @@ define(['angular', 'ngMaterial', 'json!../data/user.json', 'ngAnimate', 'cookie'
 
         })
         .controller('ViewCtrl', function($scope){
-            console.log(user);
-            user.gender = user.gender === '0' ? '男' : '女';
 
-            if (typeof user.skill === 'Array') {
-                for (var key in user.skill) {
-                   user.skill[key] = user.skill[key].join('、');
-                }    
-            }
+
+            for (var key in user.skill) {
+                if (user.skill[key] instanceof Array) {
+                    user.skill[key] = user.skill[key].join('、');
+                }
+            }    
             
             $scope.user = user;
         })

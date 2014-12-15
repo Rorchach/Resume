@@ -10,10 +10,10 @@
                 <p>
                     {{user.university}}&middot;
                     {{user.education_background}}&middot;
-                    {{user.work_experience}}&middot;
+                    {{user.work_experience_time}}&middot;
                     现居{{user.now_live}}
                 </p>
-                <p>手机： {{user.phone}}</p>
+                <p>手机： {{user.phone}} </p>
                 <p>邮箱： {{user.email}} </p>
                 <p>个人网站：<a href="http://{{user.website}}">{{user.website}}</a></p>
               </div>
@@ -67,11 +67,31 @@
             </div>
           </div>
 
+          <div class="well well-sm my-info-tag" ng-show="user.showInResume.work_experience.show">
+            <h4>实习经历</h4>
+            <div class="media">
+              <div ng-repeat="exp in user.work_experience">
+                <p>
+                  <div class="media-left text-muted">
+                    <div>{{exp.start}}至</div>
+                    {{exp.end}}
+                  </div>
+                  <div class="media-body">
+                    <div>{{exp.company}}</div>
+                    <small>
+                      {{exp.content}}
+                    </small>
+                  </div>
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div class="well well-sm my-info-tag" ng-show="user.showInResume.certificate_and_glory.show">
             <h4>证书、荣誉</h4>
             <div class="media">
               <div class="media-left"></div>
-              <div class="media-body text-muted">
+              <div class="media-body">
                 <div ng-repeat="cert in user.certificate">
                   <p>{{cert}}</p>
                 </div>
@@ -86,7 +106,7 @@
             <h4>自我评价</h4>
             <div class="media">
               <div class="media-left"></div>
-              <div class="media-body text-muted">
+              <div class="media-body">
                 {{user.self_evaluation}}
               </div>
             </div>

@@ -1,50 +1,151 @@
 {
-	"name": "胡阳",
-	"email": "cookmycode@gmail.com",
-	"pwd": "123456",
-	"age": 23,
-	"website": "182.92.8.100",
-	"gender": "0",
-	"work_experience": "应届生",
-	"birthday": "1990-12-06",
-	"phone": "13716413529",
-	"now_live": "北京",
-	"university": "黑龙江八一农垦大学",
-	"education_background": "本科",
-	"education_experience": [{
-		"school_name": "黑龙江八一农垦大学",
-		"major": "计算机科学与技术",
-		"start": "2010-8",
-		"end": "2014-6",
-		"school_type": "本科"
-		}],
-	"skill": {
-		"0": ["bootstrap", "jquery"],
-		"1": ["Linux", "JavaScritp", "RequireJS", "Grunt", "NodeJS"]
-	},
-	"self_evaluation": "对技术很有热情，擅长JS、Jquery、BootStrap、NodeJs。擅长看懂英语文档，有自己的Github：https://github.com/Rorchach，个人网站：182.92.8.100, 从事前端半年时间，熟练使用Jquery、BootStrap，熟悉require.js模块化编程、Grunt前端自动化工具，熟练使用Ajax、Jsonp和WebSocket等技术和后台交互，略懂NodeJs和Express框架，有移动端编程经验，能够熟练在Ubuntu和Mac下编程。",
-	"certificate": ["大学英语四级"],
-	"glory": ["2012、2013黑龙江省ACM竞赛三等奖", "2012、2013东北四省ACM竞赛三等奖", "农电八五奖学金", "国家励志奖学金"],
-	"showInResume": {
-		"education_experience": {
-			"text": "教育经历",
-			"show": true
-		},
-		"skill": {
-			"text": "技能",
-			"show": true
-		},
-		"self_evaluation": {
-			"text": "自我评价",
-			"show": true
-		},
-		"certificate_and_glory": {
-			"text": "证书与荣誉",
-			"show": true
-		},
-		"photo": {
-			"text": "照片",
-			"show":true
-		}
-	}
+    "huyang": {
+        "name": "胡阳",
+        "email": "cookmycode@gmail.com",
+        "pwd": "123456",
+        "age": 23,
+        "website": "182.92.8.100",
+        "gender": "0",
+        "work_experience_time": "应届生",
+        "birthday": "1990-12-06",
+        "phone": "13716413529",
+        "now_live": "北京",
+        "university": "黑龙江八一农垦大学",
+        "education_background": "本科",
+        "education_experience": [
+            {
+                "school_name": "黑龙江八一农垦大学",
+                "major": "计算机科学与技术",
+                "start": "2010-8",
+                "end": "2014-6",
+                "school_type": "本科"
+            }
+        ],
+        "skill": {
+            "0": [
+                "bootstrap",
+                "jquery"
+            ],
+            "1": [
+                "Linux",
+                "JavaScritp",
+                "RequireJS",
+                "Grunt",
+                "NodeJS"
+            ]
+        },
+        "self_evaluation": "对技术很有热情，擅长JS、Jquery、BootStrap、NodeJs。擅长看懂英语文档，有自己的Github：https://github.com/Rorchach，个人网站：182.92.8.100, 从事前端半年时间，熟练使用Jquery、BootStrap，熟悉require.js模块化编程、Grunt前端自动化工具，熟练使用Ajax、Jsonp和WebSocket等技术和后台交互，略懂NodeJs和Express框架，有移动端编程经验，能够熟练在Ubuntu和Mac下编程。",
+        "certificate": [
+            "CET-4"
+        ],
+        "glory": [
+            "2012、2013黑龙江省ACM竞赛三等奖",
+            "2012、2013东北四省ACM竞赛三等奖",
+            "农电八五奖学金",
+            "国家励志奖学金"
+        ],
+        "showInResume": {
+            "education_experience": {
+                "text": "教育经历",
+                "show": true
+            },
+            "skill": {
+                "text": "技能",
+                "show": true
+            },
+            "self_evaluation": {
+                "text": "自我评价",
+                "show": true
+            },
+            "certificate_and_glory": {
+                "text": "证书与荣誉",
+                "show": true
+            },
+            "photo": {
+                "text": "照片",
+                "show": true
+            }
+        }
+    },
+    "likx": {
+        "name": "李可心",
+        "email": "66666666@qq.com",
+        "pwd": "6666666",
+        "age": "22",
+        "phone": "13723351234",
+        "website": "likx.me",
+        "gender": "1",
+        "work_experience_time": "应届生",
+        "birthday": "1991-5-29",
+        "now_live": "北京",
+        "university": "黑龙江八一农垦大学",
+        "education_background": "本科",
+        "education_experience": [
+            {
+                "school_name": "黑龙江八一农垦大学",
+                "major": "计算机科学与技术（多媒体方向）",
+                "start": "2011-8",
+                "end": "2015-6",
+                "school_type": "本科"
+            }
+        ],
+        "skill": {
+        	"0": [
+                "Photoshop",
+                "3ds max",
+                "flash",
+                "AI",
+                "Sketch up"
+            ],
+            "1": [
+                "Office"
+        	]
+        },
+        "self_evaluation": "通过大学期间担当学生干部，锻炼出了很强的组织能力，且能与上级领导、周围同学保持良好关系。为人乐观，思维敏捷，责任心强，能迅速接受新的理念和事物。",
+        "certificate": ["CET-4"],
+        "glory": [
+            "信息技术学院 新生歌唱比赛 优秀奖",
+            "信息技术学院 2012、2013、2014专业奖学金"
+        ],
+        "work_experience": [
+            {
+                "start": "2012-7-1",
+                "end": "2012-8-1",
+                "company": "苏宁电器哈尔滨分公司",
+                "content": "TCL家电销售员，工作中，我虚心学习销售技能，能向客户耐心介绍各个产品的功能，对每一个前来询问的客户能够认真对待，详细回答。每天至少卖出五台家电。"
+            },
+            {
+                "start": "2014-7-1",
+                "end": "2014-7-20",
+                "company": "哈尔滨博城瑞达网络公司",
+                "content": "对3ds max这一科目进行深入学习，了解其在实际工作中的相关操作及应用。实习期间表现突出，被评为模范范实习生。"
+            }
+        ],
+        "showInResume": {
+            "education_experience": {
+                "text": "教育经历",
+                "show": true
+            },
+            "work_experience": {
+                "text": "实习经历",
+                "show": true
+            },
+            "skill": {
+                "text": "技能",
+                "show": true
+            },
+            "self_evaluation": {
+                "text": "自我评价",
+                "show": true
+            },
+            "certificate_and_glory": {
+                "text": "证书与荣誉",
+                "show": true
+            },
+            "photo": {
+                "text": "照片",
+                "show": true
+            }
+        }
+    }
 }
