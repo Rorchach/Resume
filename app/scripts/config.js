@@ -15,7 +15,8 @@ requirejs.config({
 		text: bower_c + 'requirejs-text/text',
 		json: bower_c + 'requirejs-plugins/src/json',
 		app: 'app',
-		login: 'login'
+		login: 'login',
+		UserFactory: 'factories/UserFactory'
 	},
 
 	shim: {

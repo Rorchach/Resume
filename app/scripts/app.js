@@ -1,15 +1,13 @@
-define(['angular', 'ngMaterial', 'json!../data/user.json', 'ngAnimate', 'cookie', 'ngAria', 'ngRoute'],
-    function(angular, ngMaterial, user){
+define(['angular', 'ngMaterial', 'json!../data/user.json', 'UserFactory', 'ngAnimate', 'cookie', 'ngAria', 'ngRoute'],
+    function(angular, ngMaterial, user, UserFactory){
     'use strict';
-
-    user = user["likx"];
-    user.gender = user.gender === '0' ? '男' : '女';
 
     angular.module('ResumeApp', [
         'ngAnimate',
         'ngCookies',
         'ngMaterial',
         'ngRoute'])
+        .factory('UserFactory', UserFactory)
         .controller('ResumeCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
             $scope.user = user;
 
@@ -36,9 +34,10 @@ define(['angular', 'ngMaterial', 'json!../data/user.json', 'ngAnimate', 'cookie'
                 }
 
         })
-        .controller('ViewCtrl', function($scope){
+        .controller('ViewCtrl', function($scope, UserFactory){
 
-
+var user = UserFactory.getUser('likx')
+console.log(user);
             for (var key in user.skill) {
                 if (user.skill[key] instanceof Array) {
                     user.skill[key] = user.skill[key].join('、');
