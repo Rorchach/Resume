@@ -8,7 +8,7 @@ require(['angular'], function(angular){
      * Controller of the resumeApp
      */
 
-    return angular.module('resumeApp')
+    return angular.module('ResumeApp')
       .controller('LoginCtrl', function ($scope) {
         $scope.email = 'cookmycode@gmail.com';
         $scope.password = '123456';

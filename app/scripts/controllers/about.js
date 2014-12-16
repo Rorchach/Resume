@@ -8,7 +8,7 @@ require(['angular'], function(angular){
 	 * # AboutCtrl
 	 * Controller of the resumeApp
 	 */
-	return angular.module('resumeApp')
+	return angular.module('ResumeApp')
 	  .controller('AboutCtrl', function ($scope) {
 	    $scope.awesomeThings = [
 	      'HTML5 Boilerplate',

@@ -29,4 +29,4 @@ requirejs.config({
 	}
 });
 
-define(['app','login']);
+requirejs(['app','login']);

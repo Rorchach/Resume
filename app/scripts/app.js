@@ -1,11 +1,11 @@
-define(['angular', 'ngMaterial', 'json!../data/user.json', 'echarts', 'ngAnimate', 'cookie', 'ngAria', 'ngRoute'],
-    function(angular, ngMaterial, user, ec){
+define(['angular', 'ngMaterial', 'json!../data/user.json', 'ngAnimate', 'cookie', 'ngAria', 'ngRoute'],
+    function(angular, ngMaterial, user){
     'use strict';
 
     user = user["likx"];
     user.gender = user.gender === '0' ? '男' : '女';
 
-    angular.module('resumeApp', [
+    angular.module('ResumeApp', [
         'ngAnimate',
         'ngCookies',
         'ngMaterial',
