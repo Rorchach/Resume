@@ -7,4 +7,4 @@ The app use requirejs、angularjs、bower、yo and grunt based on nodejs.
 ### Development
 - `(sudo) npm install`
 - `bower install`
-- `grunt serve`
+- `grunt serve --force`
