@@ -1,6 +1,7 @@
-define(['angular', 'ngMaterial', 'json!../data/user.json', 'UserFactory', 'ngAnimate', 'cookie', 'ngAria', 'ngRoute'],
+define(['angular', 'ngMaterial', 'json!../data/user.json', 'UserFactory', 'ngAnimate', 'ngAria', 'ngRoute', 'uiBootstrap', 'bootstrap'],
     function(angular, ngMaterial, user, UserFactory){
     'use strict';
+console.log(user);
 
     angular.module('ResumeApp', [
         'ngAnimate',
@@ -10,7 +11,7 @@ define(['angular', 'ngMaterial', 'json!../data/user.json', 'UserFactory', 'ngAni
         .factory('UserFactory', UserFactory)
         .controller('ResumeCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
             $scope.user = user;
-
+console.log(user);
             $scope.toggleLeft = function() {
                 $mdSidenav('left').toggle();
             };
