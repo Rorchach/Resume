@@ -1,4 +1,4 @@
-var bower_c = '../bower_components/'
+var bower_c = '../bower_components/';
 
 requirejs.config({
 	baseUrl: 'scripts',
@@ -12,8 +12,6 @@ requirejs.config({
 		echarts: 'http://echarts.baidu.com/build/dist/echarts-all',
 		ngAria: bower_c + 'angular-aria/angular-aria',
 		ngMaterial: bower_c + 'angular-material/angular-material',
-		uiBootstrap: bower_c + 'angular-bootstrap/ui-bootstrap-tpls',
-		bootstrap: bower_c + 'angular-bootstrap/ui-bootstrap',
 		text: bower_c + 'requirejs-text/text',
 		json: bower_c + 'requirejs-plugins/src/json',
 		app: 'app',

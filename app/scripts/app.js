@@ -1,11 +1,10 @@
-define(['angular', 'ngMaterial', 'json!../data/user.json', 'UserFactory', 'ngAnimate', 'ngAria', 'ngRoute', 'uiBootstrap', 'bootstrap'],
+define(['angular', 'ngMaterial', 'json!../data/user.json', 'UserFactory', 'ngAnimate', 'ngAria', 'ngRoute'],
     function(angular, ngMaterial, user, UserFactory){
     'use strict';
 console.log(user);
 
     angular.module('ResumeApp', [
         'ngAnimate',
-        'ngCookies',
         'ngMaterial',
         'ngRoute'])
         .factory('UserFactory', UserFactory)
