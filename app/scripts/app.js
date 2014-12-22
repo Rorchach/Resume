@@ -2,7 +2,7 @@ define(['angular', 'ngMaterial', 'json!../data/user.json', 'UserFactory', 'ngAni
     function(angular, ngMaterial, user, UserFactory){
     'use strict';
 
-    angular.module('ResumeApp', [
+    return angular.module('ResumeApp', [
         'ngAnimate',
         'ngMaterial',
         'ngRoute'])
@@ -28,7 +28,6 @@ define(['angular', 'ngMaterial', 'json!../data/user.json', 'UserFactory', 'ngAni
                         .ok('Got it!')
                 );
             }
-
         })
         .controller('ViewCtrl', function($scope, UserFactory){
             $scope.user = UserFactory.getUser('likx');
