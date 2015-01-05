@@ -9,6 +9,7 @@ define(['angular', 'ngMaterial', 'json!../data/user.json', 'UserFactory', 'ngAni
         .factory('UserFactory', UserFactory)
         .controller('ResumeCtrl', function($scope, $mdSidenav, UserFactory){
             $scope.user = UserFactory.getUser('likx');
+            $scope.preview = true;
 
             $scope.toggleLeft = function() {
                 $mdSidenav('left').toggle();
@@ -29,11 +30,17 @@ define(['angular', 'ngMaterial', 'json!../data/user.json', 'UserFactory', 'ngAni
                 );
             }
         })
-        .controller('ViewCtrl', function($scope, UserFactory){
-            $scope.user = UserFactory.getUser('likx');
+        .controller('ViewCtrl', function($scope, $rootScope, UserFactory){
+            $scope.preview = 1;
+            console.log($rootScope);
+            $scope.user = UserFactory.getUser('huyang');
         })
         .config(function($routeProvider){
             $routeProvider
+                .when('/', {
+                    templateUrl: 'views/view.html',
+                    controller: 'ViewCtrl'
+                })
                 .when('/editor', {
                     templateUrl: 'views/editor.html',
                     controller: 'EditorCtrl'

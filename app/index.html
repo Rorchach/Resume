@@ -46,50 +46,47 @@
 
     <div class="container">
         <div ng-controller="ResumeCtrl" layout-fill>  
+          <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+            <md-toolbar class="md-theme-indigo">
+              <h1 class="md-toolbar-tools">设置</h1>
+            </md-toolbar>
+            <md-content class="md-padding" ng-controller="LeftCtrl">
+              <md-button ng-click="close()" class="md-fab md-primary">
+                <span class="fa fa-times"></span>
+              </md-button>
+              <md-checkbox ng-repeat="(key, view) in user.showInResume" aria-label="111" ng-model="user.showInResume[key].show">
+                {{view.text}}
+              </md-checkbox>   
+            </md-content>
+          </md-sidenav>
 
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
-      <md-toolbar class="md-theme-indigo">
-        <h1 class="md-toolbar-tools">设置</h1>
-      </md-toolbar>
-      <md-content class="md-padding" ng-controller="LeftCtrl">
-        <md-button ng-click="close()" class="md-fab md-primary">
-          <span class="fa fa-times"></span>
-        </md-button>
-  
+          <md-button ng-click="toggleLeft()" class="md-fab md-primary" style="position:fixed; left:10px;" ng-hide="preview">
+              <span class="fa fa-navicon"></span>
+          </md-button>
 
-        <md-checkbox ng-repeat="(key, view) in user.showInResume" aria-label="111" ng-model="user.showInResume[key].show">
-          {{view.text}}
-        </md-checkbox>   
-      </md-content>
-    </md-sidenav>
+          <a href="#/view" ng-hide="preview">
+            <md-button class="md-fab md-warn" style="position:fixed; left:10px; top:80px;">
+                    <span class="fa fa-eye"></span>
+            </md-button>
+          </a>
 
-          <md-button ng-click="toggleLeft()" class="md-fab md-primary" style="position:fixed; left:10px;">
-            <span class="fa fa-navicon"></span>
-        </md-button>
+          <a href="#/editor" ng-hide="preview">
+            <md-button class="md-fab md-warn" style="position:fixed; left:10px; top:140px;">
+                    <span class="fa fa-pencil"></span>
+            </md-button>
+          </a>
 
-        <a href="#/view">
-        <md-button class="md-fab md-warn" style="position:fixed; left:10px; top:80px;">
-                <span class="fa fa-eye"></span>
-        </md-button>
-        </a>
-
-        <a href="#/editor">
-        <md-button class="md-fab md-warn" style="position:fixed; left:10px; top:140px;">
-                <span class="fa fa-pencil"></span>
-        </md-button>
-        </a>
-
-           
-        <div ng-view>
-          
-        </div>
-
-      <div class="footer">
-        <center>
-          <span class="glyphicon glyphicon-heart">
-          </span> by <a href="http://182.92.8.100" target="_">huker</a>
-        </center>
+          <div ng-view>
+            
+          </div>
       </div>
+
+        <div class="footer">
+          <center>
+            <span class="glyphicon glyphicon-heart">
+            </span> by <a href="http://nononono.cn" target="_">huker</a>
+          </center>
+        </div>
 
         <script src="bower_components/hammerjs/hammer.js"></script>
         <script src="bower_components/requirejs/require.js" data-main="scripts/config.js"></script>        
