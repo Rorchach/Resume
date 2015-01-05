@@ -30,6 +30,39 @@
                 "school_type": "本科"
             }
         ],
+        "project_experience": [
+            {
+                "name": "桥梁信息监控系统",
+                "role": "前端",
+                "content": "桥梁安全监控（物联网）。主要应用到的技术：jQuery、Bootstrap、ajax、flot、Echarts"
+            },
+            {
+                "name": "桥梁管养系统",
+                "role": "前端",
+                "content": "主要应用到的技术jQuery、Bootstrap、ajax、flot、Echarts、LBS、RequireJS"
+            },
+            {
+                "name": "在线2048",
+                "type": "个人业余作品",
+                "website": "2048.nononono.cn",
+                "source": "https://github.com/Rorchach/py2048",
+                "content": "在线的网页版2048，可以自定义网址路径，实时保存游戏进度，用到的技术前端+Python+MongoDB"
+
+            },
+            {
+                "name": "魅族手机模拟器",
+                "type": "个人业余作品",
+                "source": "https://github.com/Rorchach/AndroidWeb",
+                "content": "用html+css+JavaScript模拟魅族手机"
+            },
+            {
+                "name": "简历应用",
+                "type": "个人业余作品",
+                "website": "jl.nononono.cn",
+                "source": "https://github.com/Rorchach/Resume",
+                "content": "个人简历管理网站，正在开发中，用到的技术：AngularJS、前端自动化、Express"
+            }
+        ],
         "skill": [
             "熟练手写html、css、JavaScript、jQuery、Bootstrap",
             "熟练开发图表（Echarts、Highcharts、Flot……）以及LBS地图应用",
@@ -86,6 +119,10 @@
             "photo": {
                 "text": "照片",
                 "show": false
+            },
+            "project_experience": {
+                "text": "项目经验",
+                "show": true
             }
         }
     },

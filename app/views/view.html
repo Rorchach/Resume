@@ -110,5 +110,28 @@
               </div>
             </div>
           </div>
+
+          <div class="well well-sm my-info-tag" ng-show="user.showInResume.project_experience.show">
+            <h4>项目经验</h4>
+            <div class="media">
+              <div class="media-left"></div>
+              <div class="media-body">
+                <div ng-repeat="proj in user.project_experience">
+                  <h4>
+                    {{proj.name}}
+                    <small class="text-muted">{{proj.type}}</small>
+                    <small class="text-muted" ng-show="proj.role">{{"职责：" + proj.role}}</small>
+                    <small class="text-muted" ng-show="proj.website">
+                      <a href="http://{{proj.website}}" target="_">网址</a>
+                    </small>
+                    <small class="text-muted" ng-show="proj.source">
+                      <a href="{{proj.source}}" target="_">源码</a>
+                    </small>
+                  </h4>
+                  <p>简介：{{proj.content}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
