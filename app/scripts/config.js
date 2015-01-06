@@ -2,7 +2,7 @@ var bower_c = '../bower_components/';
 
 requirejs.config({
 	baseUrl: 'scripts',
-
+	waitSeconds: 0,
 	paths: {
 		hammer: bower_c + 'hammerjs/hammer',
 		angular: bower_c + 'angular/angular',
