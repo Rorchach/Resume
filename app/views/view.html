@@ -14,11 +14,14 @@
                     <span ng-show="user.showInResume.now_live.show">现居{{user.now_live}}</span>
                 </p>
                 <p>手机： {{user.phone}} </p>
-                <p>邮箱： <a href="mailto:{{user.email}}"></a>{{user.email}} </p>
+                <p>
+                    邮箱：
+                    <a href="mailto:{{user.email}}>">{{user.email}}</a>
+                </p>
                 <p>
                     个人网站：<a href="http://{{user.website}}" target="_">{{user.website}}</a>
                     &nbsp;
-                    GitHub:<a href="http://{{user.github}}" target="_">{{user.github}}</a>
+                    GitHub：<a href="http://{{user.github}}" target="_">{{user.github}}</a>
                 </p>
               </div>
             </div>
