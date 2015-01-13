@@ -8,3 +8,6 @@ The app use requirejs、angularjs、bower、yo and grunt based on nodejs.
 - `(sudo) npm install`
 - `bower install`
 - `grunt serve --force`
+
+### Demo
+http://jl.nononono.cn
