@@ -40,13 +40,81 @@
     .editor input{
       width: 100%;
     }
+
+    md-sidenav, md-button{
+        display: none;
+    }
+
+    #print {
+        -webkit-transition: margin-left .15s linear;
+        transition: margin-left .15s linear;
+        -webkit-user-select: none;
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+        margin: 7px 0 7px 30px;
+        padding: 5px 5px 5px 8px;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+
+    body {
+        height: auto;
+        background: #e5e5e5;
+    }
+
+    .well {
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        background-color: #fff;
+        border: 1px solid #d8d8d8;
+        border-bottom-width: 2px;
+        border-top-width: 0;
+        vertical-align: top;
+    }
+
+    @media print {
+        * {
+            background: none;
+        }
+
+        #print {
+            display: none;
+        }
+        
+        .well {
+            box-shadow: none;
+            border: 1px solid #eee;
+        }
+
+        .footer {
+            display: none;
+        }
+
+        a[href^="mailto:"]:after, a[href^="http://"]:after{
+            content: "";
+        }
+
+        .break-page {
+            page-break-before: always;
+            page-break-after: always;
+        }
+    }
     </style>
   </head>
   <body ng-app="ResumeApp">
 
-    <div class="container">
+    <a onclick="window.print()" id="print">
+        <span class="fa fa-print fa-2x"></span>
+    </a>
+
+    <div class="container">        
         <div ng-controller="ResumeCtrl" layout-fill>  
-          <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" ng-hide="preview">
+          <md-sidenav class="md-sidenav-left md-whiteframe-z2 hide" md-component-id="left" ng-hide="preview">
             <md-toolbar class="md-theme-indigo">
               <h1 class="md-toolbar-tools">设置</h1>
             </md-toolbar>
